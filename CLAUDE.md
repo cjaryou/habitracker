@@ -97,67 +97,98 @@ bun run reset-project
 
 ### Recent Design Updates (Oct 2025)
 
-#### Home Screen Complete Redesign (v2.0)
-**Goal:** Create unique, gamified habit tracker - different from competitors while maintaining core functionality
+#### Home Screen Terrarium Theme Redesign (v3.0 - Current)
+**Theme:** Closed Terrarium / Ecosystem - Character lives in a self-sustaining glass jar environment
 
-**New Layout Structure:**
-1. **Stats Cards Row** (Top): 3 card layout displaying Level, Day Streak, and Era
-   - White cards with subtle shadows
-   - Larger typography for values
-   - Replaces horizontal tag system
-   
-2. **Integrated Character Card** (Center): Main focus area
-   - Character name + level badge in header
-   - Large character display area
-   - Progress bar showing evolution timeline (X/30 days)
-   - White card with golden border accent
-   
-3. **Weekly Section**: Titled section for week overview
-   - "This Week" header
-   - Horizontal scrolling days calendar
-   
-4. **Action Button**: Prominent CTA
-   - Bright orange (#FF6B35) with glow effect
-   - Check mark + "Complete Today's Habits" text
-   - Uppercase, bold styling
+**Core Concept:**
+The app now uses a terrarium metaphor where the user's character inhabits a glass jar ecosystem. Habits nurture and grow the ecosystem, creating a calming, nature-inspired experience that differentiates from gamified competitors.
 
-**Key Differentiators from Competitors:**
-- ❌ No separate tags - integrated into cards
-- ✅ Stats cards instead of inline pills
-- ✅ Character + info unified in one card
-- ✅ Progress bar shows evolution timeline
-- ✅ Titled sections for clarity
-- ✅ Bright action button (vs dark)
-- ✅ Card-based layout (vs flat)
+**Layout Structure:**
+1. **Terrarium Lid** (Top): Glass-like header with character info
+   - Translucent glass effect with border
+   - Avatar + name + level display
+   - Moisture indicators (streak, humidity %)
+   - Uses water droplet icons instead of flames
 
-**Design System:**
-- White cards on beige background
-- Golden accents (#FFD93D, #FFE8B3)
-- Orange for actions (#FF6B35)
-- Strong shadows for depth
-- Rounded corners (16-24px)
+2. **Main Glass Container** (Center): The terrarium jar itself
+   - Rounded glass container with 3px border
+   - Glass reflection effects (white overlay, 30% opacity)
+   - Character lives inside the ecosystem
+   - Decorative elements: water droplets, plants, moss patches, grass blades
+   - Layered soil bottom (3 layers: light/medium/dark brown)
 
-#### Icon Library
-- Professional icon library: `@expo/vector-icons` (Ionicons) replaces emoji
-- Icons used:
-  - Timer: `time-outline` (header)
-  - Streak: `flame` (header, days calendar)
-  - Incomplete day: `ellipse-outline` (days calendar)
-  - Navigation: `home`, `time`, `stats-chart`, `people`
+3. **Weekly Calendar** (Inside Terrarium): Moss-covered stones
+   - Day markers styled as moss stones
+   - Completed days: dark green moss
+   - Today: highlighted with golden border
+   - White text on colored backgrounds
 
-#### Bottom Navigation
-- Unique design with white background and 24px rounded corners
-- Layout: `[Home] | [History • Stats (grouped)] | [Social]`
-- Center group has dark pill (#1A2332) background
-- Active states: Golden yellow (#FFD93D) icons with scale effect
-- Strong shadow effect for modern floating appearance
+4. **Progress Bar** (Inside Terrarium, above soil)
+   - Water blue fill on soil-colored background
+   - Text: "X/30 days • Growing ecosystem"
 
-#### Colors & Styling
-- Primary dark: `#1A2332`
-- Accent gold: `#FFD93D`
-- Flame orange: `#FF6B35`
-- Text brown: `#5A4A3A`, `#8B7355`
-- Background: `#F5F5DC` (beige) with white bottom nav
+5. **Action Button** (Outside Terrarium): Nature-themed CTA
+   - Deep grass green background
+   - Leaf icon + "Nurture Today" text
+   - Light green border accent
+
+6. **Bottom Navigation** (Wooden Base): Natural wood texture
+   - Soil-colored background (light brown #8B7355)
+   - Center group: Dark green pill with white icons
+   - Nature icons: leaf (home), git-branch (growth), bar-chart (stats), flower (garden)
+   - Active state: Golden glow
+
+**Terrarium Color Palette** (`TerrariumColors` in styles.ts):
+```typescript
+// Glass & Container
+glassOverlay: 'rgba(255, 255, 255, 0.15)'
+glassBorder: 'rgba(255, 255, 255, 0.3)'
+glassReflection: 'rgba(255, 255, 255, 0.7)'
+
+// Background
+skyGradientTop: '#E8F4F8' (light sky blue)
+skyGradientBottom: '#D4E8E0' (mint)
+
+// Soil Layers
+soilDark: '#4A3728'
+soilMedium: '#6B5744'
+soilLight: '#8B7355'
+
+// Nature Elements
+grassDark: '#5C8A5C'
+grassMedium: '#7FAF7F'
+grassLight: '#A8D5A8'
+leafGreen: '#6B9B6B'
+mossGreen: '#88A888'
+
+// Water & Moisture
+waterDrop: '#5DADE2'
+moisture: '#B8E6F0'
+condensation: 'rgba(184, 230, 240, 0.3)'
+
+// Accents
+golden: '#F4D58D'
+coral: '#FF8B6B'
+```
+
+**Key Design Elements:**
+- Glass morphism effects throughout
+- Organic, rounded shapes (16-24px radius)
+- Natural shadows and depth
+- Decorative ecosystem elements (plants, water, soil)
+- Calm, earthy color palette
+- Focus on growth and nurturing metaphors
+
+**Component Files:**
+- `components/home-screen/terrarium-decorations.tsx` - Water droplets, plants, moss, grass
+- `components/home-screen/styles.ts` - Complete terrarium styling with TerrariumColors palette
+- `components/home-screen/index.tsx` - Main layout with glass container structure
+
+**Icon Updates:**
+- Ecosystem theme: `leaf`, `water`, `bar-chart`, `stump-regrowth` (Game Icons SVG)
+- Growth icon: Carbon crop-growth SVG (`assets/svgs/carbon--crop-growth.svg`)
+- Garden icon: Game Icons stump-regrowth SVG (`assets/svgs/game-icons--stump-regrowth.svg`)
+- Removed: `flame`, `time-outline`, replaced with water/moisture metaphors
 
 ### Component Development
 - When creating new components for the home screen, follow the modular pattern in `components/home-screen/`

@@ -1,5 +1,38 @@
 import { StyleSheet } from 'react-native';
 
+// Terrarium Color Palette
+export const TerrariumColors = {
+  // Glass & Container
+  glassOverlay: 'rgba(255, 255, 255, 0.15)',
+  glassBorder: 'rgba(255, 255, 255, 0.3)',
+  glassReflection: 'rgba(255, 255, 255, 0.7)',
+
+  // Background
+  skyGradientTop: '#E8F4F8',
+  skyGradientBottom: '#D4E8E0',
+
+  // Soil Layers
+  soilDark: '#4A3728',
+  soilMedium: '#6B5744',
+  soilLight: '#8B7355',
+
+  // Nature Elements
+  grassDark: '#5C8A5C',
+  grassMedium: '#7FAF7F',
+  grassLight: '#A8D5A8',
+  leafGreen: '#6B9B6B',
+  mossGreen: '#88A888',
+
+  // Water & Moisture
+  waterDrop: '#5DADE2',
+  moisture: '#B8E6F0',
+  condensation: 'rgba(184, 230, 240, 0.3)',
+
+  // Accents
+  golden: '#F4D58D',
+  coral: '#FF8B6B',
+};
+
 export const homeScreenStyles = StyleSheet.create({
   // Container Styles - Softer background
   container: {
@@ -460,16 +493,7 @@ export const homeScreenStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-  },
-  centerGroup: {
-    flexDirection: 'row',
-    gap: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    backgroundColor: '#F9F3ED',
-    borderRadius: 20,
-    borderWidth: 1.5,
-    borderColor: '#E8DDD0',
+    paddingHorizontal: 8,
   },
   navItem: {
     alignItems: 'center',
@@ -493,14 +517,66 @@ export const homeScreenStyles = StyleSheet.create({
     color: '#8B6F5C',
     letterSpacing: 0.3,
   },
-  navLabelCenter: {
-    fontSize: 10,
-    fontWeight: '700',
-    color: '#A89080',
-    letterSpacing: 0.3,
-  },
   navLabelActive: {
     color: '#E89A6F',
     fontWeight: '800',
+  },
+
+  // Terrarium-specific styles
+  terrariumLid: {
+    paddingBottom: 8,
+  },
+  terrariumGlassContainer: {
+    flex: 1,
+    backgroundColor: TerrariumColors.skyGradientBottom,
+    marginHorizontal: 16,
+    marginTop: 8,
+    borderRadius: 24,
+    borderWidth: 3,
+    borderColor: TerrariumColors.glassBorder,
+    overflow: 'hidden',
+    position: 'relative',
+  },
+  glassReflection: {
+    position: 'absolute',
+    top: 0,
+    left: 20,
+    right: 20,
+    height: 100,
+    backgroundColor: TerrariumColors.glassReflection,
+    opacity: 0.3,
+    borderRadius: 50,
+    transform: [{ scaleX: 1.5 }],
+  },
+  soilLayers: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 80,
+  },
+  soilLayerLight: {
+    position: 'absolute',
+    bottom: 50,
+    left: 0,
+    right: 0,
+    height: 30,
+    backgroundColor: TerrariumColors.soilLight,
+  },
+  soilLayerMedium: {
+    position: 'absolute',
+    bottom: 25,
+    left: 0,
+    right: 0,
+    height: 25,
+    backgroundColor: TerrariumColors.soilMedium,
+  },
+  soilLayerDark: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 25,
+    backgroundColor: TerrariumColors.soilDark,
   },
 });
