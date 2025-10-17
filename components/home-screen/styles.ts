@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 export const homeScreenStyles = StyleSheet.create({
-  // Container Styles
+  // Container Styles - Softer background
   container: {
     flex: 1,
-    backgroundColor: '#F5F5DC',
+    backgroundColor: '#F9F6F1',
   },
   mainContainer: {
     flex: 1,
@@ -16,7 +16,7 @@ export const homeScreenStyles = StyleSheet.create({
     paddingTop: 16,
   },
 
-  // NEW: Compact Header - All in one line
+  // NEW: Compact Header - Softer colors
   compactHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -26,11 +26,11 @@ export const homeScreenStyles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     marginHorizontal: 12,
     marginTop: 12,
-    borderRadius: 16,
-    shadowColor: '#000',
+    borderRadius: 20,
+    shadowColor: '#C9B8A8',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.06,
-    shadowRadius: 6,
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
     elevation: 2,
   },
   userInfo: {
@@ -42,24 +42,24 @@ export const homeScreenStyles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#4A5568',
+    backgroundColor: '#E8D5C4',
     justifyContent: 'center',
     alignItems: 'center',
   },
   smallAvatarText: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFF',
+    color: '#8B6F5C',
   },
   compactName: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#2C3E50',
+    color: '#6B5548',
   },
   compactLevel: {
     fontSize: 11,
     fontWeight: '600',
-    color: '#8B7355',
+    color: '#A89080',
   },
   compactStats: {
     flexDirection: 'row',
@@ -69,15 +69,15 @@ export const homeScreenStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: '#F5F5DC',
+    backgroundColor: '#FFF5F0',
     paddingHorizontal: 8,
     paddingVertical: 6,
-    borderRadius: 8,
+    borderRadius: 12,
   },
   miniStatText: {
     fontSize: 12,
     fontWeight: '700',
-    color: '#2C3E50',
+    color: '#8B6F5C',
   },
 
   // NEW: Inline Week Calendar
@@ -109,19 +109,19 @@ export const homeScreenStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
-    backgroundColor: '#FF6B35',
-    paddingVertical: 14,
-    borderRadius: 16,
-    shadowColor: '#FF6B35',
+    backgroundColor: '#E89A6F',
+    paddingVertical: 15,
+    borderRadius: 20,
+    shadowColor: '#E89A6F',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
     elevation: 4,
   },
   actionButtonText: {
     color: '#FFFFFF',
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: '800',
     letterSpacing: 0.5,
   },
 
@@ -215,7 +215,7 @@ export const homeScreenStyles = StyleSheet.create({
     color: '#2C3E50',
   },
 
-  // Days Calendar Styles - More compact
+  // Days Calendar Styles - Cute & Soft
   daysContainer: {
     marginBottom: 0,
   },
@@ -225,36 +225,37 @@ export const homeScreenStyles = StyleSheet.create({
   dayBox: {
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 12,
-    paddingVertical: 10,
-    borderRadius: 12,
+    paddingVertical: 12,
+    borderRadius: 16,
     alignItems: 'center',
-    gap: 4,
+    gap: 6,
     borderWidth: 2,
     borderColor: 'transparent',
     minWidth: 48,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.04,
-    shadowRadius: 2,
-    elevation: 1,
+    shadowColor: '#D4C4B4',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    elevation: 2,
   },
   dayBoxToday: {
-    borderColor: '#FFC947',
-    backgroundColor: '#FFFAEC',
-    shadowColor: '#FFC947',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 3,
+    borderColor: '#F4C7A3',
+    backgroundColor: '#FFF9F5',
+    shadowColor: '#F4C7A3',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 4,
   },
   dayBoxCompleted: {
-    backgroundColor: '#FFE8B3',
+    backgroundColor: '#FFF0E5',
+    borderColor: '#FFD4B0',
   },
   dayText: {
     fontSize: 10,
     fontWeight: '700',
-    color: '#2C3E50',
-    letterSpacing: 0.3,
+    color: '#8B6F5C',
+    letterSpacing: 0.5,
   },
 
   // Tags Styles
@@ -366,18 +367,18 @@ export const homeScreenStyles = StyleSheet.create({
   progressBar: {
     height: 6,
     width: '100%',
-    backgroundColor: '#E5D8C9',
+    backgroundColor: '#F5EFE8',
     borderRadius: 3,
     overflow: 'hidden',
   },
   progressFill: {
     height: '100%',
-    backgroundColor: '#FF6B35',
+    backgroundColor: '#E89A6F',
     borderRadius: 3,
   },
   progressText: {
     fontSize: 10,
-    color: '#8B7355',
+    color: '#A89080',
     textAlign: 'center',
     fontWeight: '600',
   },
@@ -439,19 +440,21 @@ export const homeScreenStyles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 
-  // Bottom Navigation Styles
+  // Bottom Navigation Styles - Soft & Rounded
   bottomNav: {
-    backgroundColor: '#1A2332',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
     paddingHorizontal: 12,
     paddingTop: 16,
     paddingBottom: 8,
-    shadowColor: '#000',
+    shadowColor: '#C9B8A8',
     shadowOffset: { width: 0, height: -4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 12,
+    shadowOpacity: 0.2,
+    shadowRadius: 16,
     elevation: 8,
+    borderTopWidth: 1,
+    borderTopColor: '#F5EFE8',
   },
   navItemsContainer: {
     flexDirection: 'row',
@@ -462,13 +465,15 @@ export const homeScreenStyles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
     paddingHorizontal: 16,
-    paddingVertical: 8,
-    backgroundColor: 'transparent',
+    paddingVertical: 10,
+    backgroundColor: '#F9F3ED',
     borderRadius: 20,
+    borderWidth: 1.5,
+    borderColor: '#E8DDD0',
   },
   navItem: {
     alignItems: 'center',
-    gap: 4,
+    gap: 5,
     paddingVertical: 4,
     paddingHorizontal: 12,
     minWidth: 70,
@@ -484,18 +489,18 @@ export const homeScreenStyles = StyleSheet.create({
   },
   navLabel: {
     fontSize: 10,
-    fontWeight: '600',
-    color: '#C4B5A0',
+    fontWeight: '700',
+    color: '#8B6F5C',
     letterSpacing: 0.3,
   },
   navLabelCenter: {
     fontSize: 10,
-    fontWeight: '600',
-    color: '#A89684',
+    fontWeight: '700',
+    color: '#A89080',
     letterSpacing: 0.3,
   },
   navLabelActive: {
-    color: '#FFD93D',
-    fontWeight: '700',
+    color: '#E89A6F',
+    fontWeight: '800',
   },
 });

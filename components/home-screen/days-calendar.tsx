@@ -26,9 +26,9 @@ export function DaysCalendar({ daysOfWeek, todayIndex }: DaysCalendarProps) {
             ]}>
             <ThemedText style={homeScreenStyles.dayText}>{dayData.day}</ThemedText>
             {dayData.completed ? (
-              <Ionicons name="flame" size={22} color="#FF6B35" />
+              <Ionicons name="fitness" size={22} color="#E89A6F" />
             ) : (
-              <Ionicons name="ellipse-outline" size={20} color="#D0D0D0" />
+              <Ionicons name="ellipse" size={18} color="#E5D5C5" />
             )}
           </View>
         </TouchableOpacity>

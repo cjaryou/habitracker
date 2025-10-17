@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { homeScreenStyles } from './styles';
 
 interface BottomNavigationProps {
-  onNavigate?: (screen: 'timeline' | 'fossils' | 'campfire') => void;
+  onNavigate?: (screen: 'timeline' | 'fossils' | 'rewards') => void;
   activeScreen?: string;
 }
 
@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { id: 'home', label: 'Home', icon: 'home' as const },
   { id: 'timeline', label: 'History', icon: 'time' as const },
   { id: 'fossils', label: 'Stats', icon: 'stats-chart' as const },
-  { id: 'campfire', label: 'Social', icon: 'people' as const },
+  { id: 'rewards', label: 'Rewards', icon: 'trophy' as const },
 ];
 
 export function BottomNavigation({ onNavigate, activeScreen = 'home' }: BottomNavigationProps) {
@@ -40,10 +40,10 @@ export function BottomNavigation({ onNavigate, activeScreen = 'home' }: BottomNa
                     <Ionicons
                       name={NAV_ITEMS[1].icon}
                       size={22}
-                      color="#C4B5A0"
+                      color="#A89080"
                     />
                   </View>
-                  <ThemedText style={homeScreenStyles.navLabel}>
+                  <ThemedText style={homeScreenStyles.navLabelCenter}>
                     {NAV_ITEMS[1].label}
                   </ThemedText>
                 </TouchableOpacity>
@@ -59,10 +59,10 @@ export function BottomNavigation({ onNavigate, activeScreen = 'home' }: BottomNa
                     <Ionicons
                       name={NAV_ITEMS[2].icon}
                       size={22}
-                      color="#C4B5A0"
+                      color="#A89080"
                     />
                   </View>
-                  <ThemedText style={homeScreenStyles.navLabel}>
+                  <ThemedText style={homeScreenStyles.navLabelCenter}>
                     {NAV_ITEMS[2].label}
                   </ThemedText>
                 </TouchableOpacity>
@@ -80,14 +80,14 @@ export function BottomNavigation({ onNavigate, activeScreen = 'home' }: BottomNa
               style={homeScreenStyles.navItem}
               onPress={() => {
                 if (item.id !== 'home' && onNavigate) {
-                  onNavigate(item.id as 'timeline' | 'fossils' | 'campfire');
+                  onNavigate(item.id as 'timeline' | 'fossils' | 'rewards');
                 }
               }}>
               <View style={homeScreenStyles.navIconWrapper}>
                 <Ionicons
                   name={item.icon}
                   size={24}
-                  color="#C4B5A0"
+                  color="#8B6F5C"
                 />
               </View>
               <ThemedText style={homeScreenStyles.navLabel}>
