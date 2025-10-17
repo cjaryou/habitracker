@@ -514,11 +514,11 @@ export const homeScreenStyles = StyleSheet.create({
   navLabel: {
     fontSize: 10,
     fontWeight: '700',
-    color: '#8B6F5C',
+    color: '#B8A898',
     letterSpacing: 0.3,
   },
   navLabelActive: {
-    color: '#E89A6F',
+    color: '#6B9B6B',
     fontWeight: '800',
   },
 

@@ -53,11 +53,8 @@ export function BottomNavigation({ onNavigate, onNavigateHome, activeScreen = 'h
           const isActive = activeScreen === item.id;
           const isGrowth = item.id === 'timeline';
 
-          // Growth icon colors
-          const growthColor = isActive ? '#7FAF7F' : '#5C8A5C';
-
-          // Other icon colors
-          const iconColor = isActive ? '#E89A6F' : '#8B7355';
+          // Unified color system: Active = vibrant green, Inactive = muted gray
+          const iconColor = isActive ? '#6B9B6B' : '#B8A898';
 
           return (
             <TouchableOpacity
@@ -75,7 +72,7 @@ export function BottomNavigation({ onNavigate, onNavigateHome, activeScreen = 'h
                   icon={item.icon}
                   isSvg={item.isSvg}
                   size={isGrowth ? 32 : 24}
-                  color={isGrowth ? growthColor : iconColor}
+                  color={iconColor}
                 />
               </View>
               <ThemedText style={[
