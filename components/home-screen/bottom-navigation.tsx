@@ -1,5 +1,6 @@
 import { ThemedText } from '@/components/themed-text';
 import { TouchableOpacity, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { homeScreenStyles } from './styles';
 
 interface BottomNavigationProps {
@@ -14,8 +15,10 @@ const NAV_ITEMS = [
 ];
 
 export function BottomNavigation({ onNavigate }: BottomNavigationProps) {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={homeScreenStyles.bottomNav}>
+    <View style={[homeScreenStyles.bottomNav, { paddingBottom: Math.max(insets.bottom, 8) }]}>
       {NAV_ITEMS.map((item) => (
         <TouchableOpacity
           key={item.id}

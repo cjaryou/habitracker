@@ -6,6 +6,10 @@ export const homeScreenStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F5DC',
   },
+  mainContainer: {
+    flex: 1,
+    flexDirection: 'column',
+  },
   scrollView: {
     flex: 1,
     paddingHorizontal: 16,
@@ -146,7 +150,7 @@ export const homeScreenStyles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 12,
     alignItems: 'center',
-    marginBottom: 80,
+    marginBottom: 16,
   },
   reviewButtonText: {
     color: '#FFF',
@@ -156,17 +160,13 @@ export const homeScreenStyles = StyleSheet.create({
 
   // Bottom Navigation Styles
   bottomNav: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
     flexDirection: 'row',
     backgroundColor: '#F5F5DC',
     borderTopWidth: 1,
     borderTopColor: '#E0D5B7',
     paddingHorizontal: 12,
     paddingVertical: 8,
-    paddingBottom: 16,
+    paddingBottom: 8,
   },
   navItem: {
     flex: 1,

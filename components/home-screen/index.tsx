@@ -1,6 +1,7 @@
 import { ThemedText } from '@/components/themed-text';
 import React from 'react';
-import { SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { BottomNavigation } from './bottom-navigation';
 import { CharacterContainer } from './character-container';
 import { DEFAULT_DAYS_OF_WEEK, TODAY_INDEX } from './constants';
@@ -19,28 +20,30 @@ export function HomeScreen({
   onNavigateTo,
 }: HomeScreenProps) {
   return (
-    <SafeAreaView style={homeScreenStyles.container}>
-      <ScrollView style={homeScreenStyles.scrollView} showsVerticalScrollIndicator={false}>
-        {/* Header */}
-        <Header characterName={characterName} currentStreak={currentStreak} />
+    <SafeAreaView style={homeScreenStyles.container} edges={['top', 'left', 'right']}>
+      <View style={homeScreenStyles.mainContainer}>
+        <ScrollView style={homeScreenStyles.scrollView} showsVerticalScrollIndicator={false}>
+          {/* Header */}
+          <Header characterName={characterName} currentStreak={currentStreak} />
 
-        {/* Weekly Days Calendar */}
-        <DaysCalendar daysOfWeek={DEFAULT_DAYS_OF_WEEK} todayIndex={TODAY_INDEX} />
+          {/* Weekly Days Calendar */}
+          <DaysCalendar daysOfWeek={DEFAULT_DAYS_OF_WEEK} todayIndex={TODAY_INDEX} />
 
-        {/* Info Tags */}
-        <InfoTags characterName={characterName} level={level} era={era} />
+          {/* Info Tags */}
+          <InfoTags characterName={characterName} level={level} era={era} />
 
-        {/* Character Container */}
-        <CharacterContainer />
+          {/* Character Container */}
+          <CharacterContainer />
 
-        {/* Review Today Button */}
-        <TouchableOpacity style={homeScreenStyles.reviewButton} onPress={onReviewToday}>
-          <ThemedText style={homeScreenStyles.reviewButtonText}>Review Today</ThemedText>
-        </TouchableOpacity>
-      </ScrollView>
+          {/* Review Today Button */}
+          <TouchableOpacity style={homeScreenStyles.reviewButton} onPress={onReviewToday}>
+            <ThemedText style={homeScreenStyles.reviewButtonText}>Review Today</ThemedText>
+          </TouchableOpacity>
+        </ScrollView>
 
-      {/* Bottom Navigation */}
-      <BottomNavigation onNavigate={onNavigateTo} />
+        {/* Bottom Navigation */}
+        <BottomNavigation onNavigate={onNavigateTo} />
+      </View>
     </SafeAreaView>
   );
 }
