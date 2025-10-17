@@ -1,7 +1,7 @@
 import { ThemedText } from '@/components/themed-text';
 import { Ionicons } from '@expo/vector-icons';
-import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BottomNavigation } from './bottom-navigation';
 import { DEFAULT_DAYS_OF_WEEK, TODAY_INDEX } from './constants';
@@ -17,31 +17,49 @@ export function HomeScreen({
   onReviewToday,
   onNavigateTo,
 }: HomeScreenProps) {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 250,
+      useNativeDriver: true,
+    }).start();
+  }, [fadeAnim]);
+
   return (
     <SafeAreaView style={homeScreenStyles.container} edges={['top', 'left', 'right']}>
-      <View style={homeScreenStyles.mainContainer}>
-        {/* Terrarium Lid - Top decorative element */}
-        <View style={homeScreenStyles.terrariumLid}>
-          <View style={homeScreenStyles.compactHeader}>
-            <View style={homeScreenStyles.userInfo}>
-              <View style={homeScreenStyles.smallAvatar}>
-                <ThemedText style={homeScreenStyles.smallAvatarText}>
+      <Animated.View style={[homeScreenStyles.mainContainer, { opacity: fadeAnim }]}>
+        {/* Modern Header Card */}
+        <View style={homeScreenStyles.modernHeader}>
+          <View style={homeScreenStyles.headerContent}>
+            {/* Avatar & Name Section */}
+            <View style={homeScreenStyles.avatarSection}>
+              <View style={homeScreenStyles.avatarContainer}>
+                <ThemedText style={homeScreenStyles.avatarText}>
                   {characterName.charAt(0).toUpperCase()}
                 </ThemedText>
               </View>
-              <View>
-                <ThemedText style={homeScreenStyles.compactName}>{characterName}</ThemedText>
-                <ThemedText style={homeScreenStyles.compactLevel}>Lv.{level} • {era}</ThemedText>
+              <View style={homeScreenStyles.nameSection}>
+                <ThemedText style={homeScreenStyles.characterName}>{characterName}</ThemedText>
+                <View style={homeScreenStyles.levelBadgeSmall}>
+                  <ThemedText style={homeScreenStyles.levelText}>Lv.{level}</ThemedText>
+                  <View style={homeScreenStyles.eraDot} />
+                  <ThemedText style={homeScreenStyles.eraText}>{era}</ThemedText>
+                </View>
               </View>
             </View>
-            <View style={homeScreenStyles.compactStats}>
-              <View style={homeScreenStyles.miniStatBox}>
-                <Ionicons name="flame" size={16} color="#5DADE2" />
-                <ThemedText style={homeScreenStyles.miniStatText}>{currentStreak}</ThemedText>
+
+            {/* Stats Section */}
+            <View style={homeScreenStyles.statsSection}>
+              <View style={homeScreenStyles.statItem}>
+                <Ionicons name="water-outline" size={18} color="#5DADE2" />
+                <ThemedText style={homeScreenStyles.statNumber}>{currentStreak}</ThemedText>
               </View>
-              <View style={homeScreenStyles.miniStatBox}>
-                <Ionicons name="water" size={16} color="#5DADE2" />
-                <ThemedText style={homeScreenStyles.miniStatText}>98%</ThemedText>
+              <View style={homeScreenStyles.statDivider} />
+              <View style={homeScreenStyles.statItem}>
+                <Ionicons name="leaf-outline" size={18} color="#6B9B6B" />
+                <ThemedText style={homeScreenStyles.statNumber}>98%</ThemedText>
               </View>
             </View>
           </View>
@@ -95,7 +113,7 @@ export function HomeScreen({
 
         {/* Bottom Navigation - Wooden base */}
         <BottomNavigation onNavigate={onNavigateTo} />
-      </View>
+      </Animated.View>
     </SafeAreaView>
   );
 }

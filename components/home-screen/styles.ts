@@ -49,7 +49,101 @@ export const homeScreenStyles = StyleSheet.create({
     paddingTop: 16,
   },
 
-  // NEW: Compact Header - Softer colors
+  // Modern Header Design
+  modernHeader: {
+    marginHorizontal: 16,
+    marginTop: 12,
+    marginBottom: 16,
+  },
+  headerContent: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 24,
+    padding: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    shadowColor: '#6B9B6B',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.12,
+    shadowRadius: 12,
+    elevation: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(107, 155, 107, 0.1)',
+  },
+  avatarSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    flex: 1,
+  },
+  avatarContainer: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: '#E8F4E8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#6B9B6B',
+  },
+  avatarText: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: '#6B9B6B',
+    letterSpacing: 0.5,
+  },
+  nameSection: {
+    flex: 1,
+    gap: 4,
+  },
+  characterName: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#2C3E2C',
+    letterSpacing: 0.3,
+  },
+  levelBadgeSmall: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  levelText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#6B9B6B',
+  },
+  eraDot: {
+    width: 3,
+    height: 3,
+    borderRadius: 1.5,
+    backgroundColor: '#B8A898',
+  },
+  eraText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#8B7355',
+  },
+  statsSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  statItem: {
+    alignItems: 'center',
+    gap: 4,
+  },
+  statNumber: {
+    fontSize: 15,
+    fontWeight: '800',
+    color: '#2C3E2C',
+  },
+  statDivider: {
+    width: 1,
+    height: 24,
+    backgroundColor: '#E8DDD0',
+  },
+
+  // OLD: Compact Header - Softer colors (keeping for backwards compatibility)
   compactHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -178,11 +272,6 @@ export const homeScreenStyles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
-  },
-  avatarText: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#FFF',
   },
   greeting: {
     flex: 1,
@@ -377,7 +466,7 @@ export const homeScreenStyles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
-  characterName: {
+  characterCardName: {
     fontSize: 22,
     fontWeight: '800',
     color: '#1A2332',
