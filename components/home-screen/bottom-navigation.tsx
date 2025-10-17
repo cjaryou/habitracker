@@ -7,6 +7,7 @@ import { homeScreenStyles } from './styles';
 
 interface BottomNavigationProps {
   onNavigate?: (screen: 'timeline' | 'fossils' | 'rewards') => void;
+  onNavigateHome?: () => void;
   activeScreen?: string;
 }
 
@@ -42,7 +43,7 @@ function NavIcon({ icon, isSvg, size, color }: IconProps) {
   return <Ionicons name={icon as any} size={size} color={color} />;
 }
 
-export function BottomNavigation({ onNavigate, activeScreen = 'home' }: BottomNavigationProps) {
+export function BottomNavigation({ onNavigate, onNavigateHome, activeScreen = 'home' }: BottomNavigationProps) {
   const insets = useSafeAreaInsets();
 
   return (
@@ -63,7 +64,9 @@ export function BottomNavigation({ onNavigate, activeScreen = 'home' }: BottomNa
               key={item.id}
               style={homeScreenStyles.navItem}
               onPress={() => {
-                if (item.id !== 'home' && onNavigate) {
+                if (item.id === 'home' && onNavigateHome) {
+                  onNavigateHome();
+                } else if (item.id !== 'home' && onNavigate) {
                   onNavigate(item.id as 'timeline' | 'fossils' | 'rewards');
                 }
               }}>

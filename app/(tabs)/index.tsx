@@ -1,6 +1,20 @@
 import { default as HomeScreen } from '@/components/home-screen';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreenPage() {
+  const router = useRouter();
+
+  const handleNavigateTo = (screen: 'timeline' | 'fossils' | 'rewards') => {
+    // Map bottom navigation IDs to actual route names
+    const routeMap: Record<string, '/timeline' | '/stats' | '/garden'> = {
+      timeline: '/timeline',
+      fossils: '/stats',
+      rewards: '/garden',
+    };
+
+    router.replace(routeMap[screen]);
+  };
+
   return (
     <HomeScreen
       characterName="Tyrling"
@@ -8,7 +22,7 @@ export default function HomeScreenPage() {
       level={14}
       era="Iron Era"
       onReviewToday={() => console.log('Review today clicked')}
-      onNavigateTo={(screen) => console.log(`Navigate to ${screen}`)}
+      onNavigateTo={handleNavigateTo}
     />
   );
 }
