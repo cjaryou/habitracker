@@ -1,5 +1,5 @@
-import { ScrollView, TouchableOpacity, View } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
 import { homeScreenStyles } from './styles';
 import { DayData } from './types';
 

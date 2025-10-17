@@ -1,8 +1,9 @@
-export { HomeScreen as default } from './index';
-export { Header } from './header';
-export { DaysCalendar } from './days-calendar';
-export { InfoTags } from './info-tags';
-export { CharacterContainer } from './character-container';
 export { BottomNavigation } from './bottom-navigation';
-export type { HomeScreenProps, DayData } from './types';
-export { HOME_COLORS, SPACING, BORDER_RADIUS, BORDERS } from './constants';
+export { CharacterContainer } from './character-container';
+export { BORDERS, BORDER_RADIUS, HOME_COLORS, SPACING } from './constants';
+export { DaysCalendar } from './days-calendar';
+export { Header } from './header';
+export { HomeScreen as default } from './index';
+export { InfoTags } from './info-tags';
+export type { DayData, HomeScreenProps } from './types';
+

@@ -1,14 +1,14 @@
+import { ThemedText } from '@/components/themed-text';
 import React from 'react';
 import { SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import { homeScreenStyles } from './styles';
-import { Header } from './header';
-import { DaysCalendar } from './days-calendar';
-import { InfoTags } from './info-tags';
-import { CharacterContainer } from './character-container';
 import { BottomNavigation } from './bottom-navigation';
-import { HomeScreenProps } from './types';
+import { CharacterContainer } from './character-container';
 import { DEFAULT_DAYS_OF_WEEK, TODAY_INDEX } from './constants';
-import { ThemedText } from '@/components/themed-text';
+import { DaysCalendar } from './days-calendar';
+import { Header } from './header';
+import { InfoTags } from './info-tags';
+import { homeScreenStyles } from './styles';
+import { HomeScreenProps } from './types';
 
 export function HomeScreen({
   characterName = 'Your Pet',

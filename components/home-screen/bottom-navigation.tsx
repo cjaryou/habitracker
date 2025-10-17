@@ -1,5 +1,5 @@
-import { View, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
+import { TouchableOpacity, View } from 'react-native';
 import { homeScreenStyles } from './styles';
 
 interface BottomNavigationProps {

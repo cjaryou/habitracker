@@ -1,5 +1,5 @@
-import { View } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
+import { View } from 'react-native';
 import { homeScreenStyles } from './styles';
 
 interface HeaderProps {
