@@ -34,7 +34,7 @@ export function GardenScreen({ onNavigateTo, onNavigateHome }: GardenScreenProps
       </Animated.View>
 
       {/* Bottom Navigation */}
-      <BottomNavigation onNavigate={onNavigateTo} onNavigateHome={onNavigateHome} activeScreen="rewards" />
+      <BottomNavigation onNavigate={onNavigateTo} onNavigateHome={onNavigateHome} activeScreen="garden" />
     </SafeAreaView>
   );
 }

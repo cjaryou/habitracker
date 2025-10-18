@@ -1,4 +1,4 @@
 export interface GardenScreenProps {
-  onNavigateTo?: (screen: 'timeline' | 'fossils' | 'rewards') => void;
+  onNavigateTo?: (screen: 'growth' | 'stats' | 'garden') => void;
   onNavigateHome?: () => void;
 }

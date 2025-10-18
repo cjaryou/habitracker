@@ -6,7 +6,7 @@ import { SvgXml } from 'react-native-svg';
 import { homeScreenStyles } from './styles';
 
 interface BottomNavigationProps {
-  onNavigate?: (screen: 'timeline' | 'fossils' | 'rewards') => void;
+  onNavigate?: (screen: 'growth' | 'stats' | 'garden') => void;
   onNavigateHome?: () => void;
   activeScreen?: string;
 }
@@ -24,9 +24,9 @@ const STUMP_REGROWTH_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="512" 
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: 'Home', icon: 'leaf' },
-  { id: 'timeline', label: 'Growth', icon: CROP_GROWTH_SVG, isSvg: true },
-  { id: 'fossils', label: 'Stats', icon: 'bar-chart' },
-  { id: 'rewards', label: 'Garden', icon: STUMP_REGROWTH_SVG, isSvg: true },
+  { id: 'growth', label: 'Growth', icon: CROP_GROWTH_SVG, isSvg: true },
+  { id: 'stats', label: 'Stats', icon: 'bar-chart' },
+  { id: 'garden', label: 'Garden', icon: STUMP_REGROWTH_SVG, isSvg: true },
 ];
 
 interface IconProps {
@@ -51,7 +51,7 @@ export function BottomNavigation({ onNavigate, onNavigateHome, activeScreen = 'h
       <View style={homeScreenStyles.navItemsContainer}>
         {NAV_ITEMS.map((item) => {
           const isActive = activeScreen === item.id;
-          const isGrowth = item.id === 'timeline';
+          const isGrowth = item.id === 'growth';
 
           // Unified color system: Active = vibrant green, Inactive = muted gray
           const iconColor = isActive ? '#6B9B6B' : '#B8A898';
@@ -64,7 +64,7 @@ export function BottomNavigation({ onNavigate, onNavigateHome, activeScreen = 'h
                 if (item.id === 'home' && onNavigateHome) {
                   onNavigateHome();
                 } else if (item.id !== 'home' && onNavigate) {
-                  onNavigate(item.id as 'timeline' | 'fossils' | 'rewards');
+                  onNavigate(item.id as 'growth' | 'stats' | 'garden');
                 }
               }}>
               <View style={homeScreenStyles.navIconWrapper}>

@@ -1,7 +1,7 @@
-import { default as StatsScreen } from '@/components/stats-screen';
+import { default as GrowthScreen } from '@/components/growth-screen';
 import { useRouter } from 'expo-router';
 
-export default function StatsPage() {
+export default function GrowthPage() {
   const router = useRouter();
 
   const handleNavigateTo = (screen: 'growth' | 'stats' | 'garden') => {
@@ -18,5 +18,5 @@ export default function StatsPage() {
     router.replace('/');
   };
 
-  return <StatsScreen onNavigateTo={handleNavigateTo} onNavigateHome={handleNavigateHome} />;
+  return <GrowthScreen onNavigateTo={handleNavigateTo} onNavigateHome={handleNavigateHome} />;
 }

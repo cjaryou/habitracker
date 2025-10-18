@@ -9,5 +9,5 @@ export interface HomeScreenProps {
   level?: number;
   era?: string;
   onReviewToday?: () => void;
-  onNavigateTo?: (screen: 'timeline' | 'fossils' | 'rewards') => void;
+  onNavigateTo?: (screen: 'growth' | 'stats' | 'garden') => void;
 }

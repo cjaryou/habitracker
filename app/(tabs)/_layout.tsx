@@ -11,7 +11,7 @@ export default function TabLayout() {
       }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="explore" />
-      <Stack.Screen name="timeline" />
+      <Stack.Screen name="growth" />
       <Stack.Screen name="stats" />
       <Stack.Screen name="garden" />
     </Stack>

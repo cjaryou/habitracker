@@ -87,7 +87,7 @@ export function HomeScreen({
             <View style={homeScreenStyles.soilLayerDark} />
           </View>
 
-          {/* Progress Bar - Growth timeline */}
+          {/* Progress Bar - Growth progress */}
           <View style={homeScreenStyles.bottomActionArea}>
             <View style={homeScreenStyles.compactProgress}>
               <View style={homeScreenStyles.progressBar}>

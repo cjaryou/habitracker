@@ -4,11 +4,11 @@ import { useRouter } from 'expo-router';
 export default function GardenPage() {
   const router = useRouter();
 
-  const handleNavigateTo = (screen: 'timeline' | 'fossils' | 'rewards') => {
-    const routeMap: Record<string, '/timeline' | '/stats' | '/garden'> = {
-      timeline: '/timeline',
-      fossils: '/stats',
-      rewards: '/garden',
+  const handleNavigateTo = (screen: 'growth' | 'stats' | 'garden') => {
+    const routeMap: Record<string, '/growth' | '/stats' | '/garden'> = {
+      growth: '/growth',
+      stats: '/stats',
+      garden: '/garden',
     };
 
     router.replace(routeMap[screen]);
